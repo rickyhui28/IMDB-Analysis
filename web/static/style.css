@@ -1,0 +1,69 @@
+
+h1 {
+    font-size: 48px;  /* Increase the font size */
+    font-weight: bold;
+    margin-bottom: 20px; /* Add spacing below the title */
+}
+
+form {
+    margin-top: 20px;
+    background-color: rgba(0,0,0,0.1) !important;
+}
+
+input[type="text"] {
+    padding: 15px;  /* Increase padding inside the input box */
+    font-size: 20px;  /* Increase the font size */
+    width: 400px;  /* Increase the width */
+    border: 2px solid #000;  /* Optional: make the border more prominent */
+    border-radius: 5px;  /* Add rounded corners */
+}
+
+button {
+    padding: 15px 25px;  /* Increase padding inside the button */
+    font-size: 20px;  /* Increase font size for the button text */
+    background-color: #5cb85c;  /* You can change the background color here */
+    color: white;  /* White text */
+    border: none;  /* Remove the default border */
+    border-radius: 5px;  /* Add rounded corners */
+    cursor: pointer;  /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #4cae4c;  /* Darken the button on hover */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+body {
+    /* Assuming background.jpg is in the static folder */
+    background-image: url('/static/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid;
+    padding: 10px;
+  }
