@@ -1,57 +1,12 @@
-
-h1 {
-    font-size: 48px;  /* Increase the font size */
-    font-weight: bold;
-    margin-bottom: 20px; /* Add spacing below the title */
-}
-
-form {
-    margin-top: 20px;
-    background-color: rgba(0,0,0,0.1) !important;
-}
-
-input[type="text"] {
-    padding: 15px;  /* Increase padding inside the input box */
-    font-size: 20px;  /* Increase the font size */
-    width: 400px;  /* Increase the width */
-    border: 2px solid #000;  /* Optional: make the border more prominent */
-    border-radius: 5px;  /* Add rounded corners */
-}
-
-button {
-    padding: 15px 25px;  /* Increase padding inside the button */
-    font-size: 20px;  /* Increase font size for the button text */
-    background-color: #5cb85c;  /* You can change the background color here */
-    color: white;  /* White text */
-    border: none;  /* Remove the default border */
-    border-radius: 5px;  /* Add rounded corners */
-    cursor: pointer;  /* Pointer cursor on hover */
-}
-
-button:hover {
-    background-color: #4cae4c;  /* Darken the button on hover */
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    background: #fff;
-    margin: 10px 0;
-    padding: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
 body {
-    /* Assuming background.jpg is in the static folder */
-    background-image: url('/static/background.jpg');
+    background-image: url('{{ url_for('static', filename='background.jpg') }}');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     padding: 20px;
     background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
 }
 
 form {
@@ -59,11 +14,96 @@ form {
     padding: 20px;
     border-radius: 10px;
     display: inline-block;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
 }
 
-.center {
-    margin: auto;
-    width: 50%;
-    border: 3px solid;
+input[type="text"] {
     padding: 10px;
-  }
+    font-size: 18px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.movie-item {
+    flex: 1 1 calc(25% - 20px); /* Adjusts to 4 per row */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+    .movie-item {
+        flex: 1 1 calc(33.33% - 20px); /* 3 per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .movie-item {
+        flex: 1 1 calc(50% - 20px); /* 2 per row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-item {
+        flex: 1 1 100%; /* 1 per row on extra-small screens */
+    }
+}
+
+.movie-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.movie-item p {
+    margin: 5px 0;
+}
+
+@media (max-width: 1024px) {
+    .movie-item {
+        flex: 1 1 calc(33.33% - 20px); /* 3 movies per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .movie-item {
+        flex: 1 1 calc(50% - 20px); /* 2 movies per row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-item {
+        flex: 1 1 100%; /* 1 movie per row on extra-small screens */
+    }
+}

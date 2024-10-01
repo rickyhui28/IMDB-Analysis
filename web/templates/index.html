@@ -22,13 +22,37 @@
 </head>
 <body>
 
-    <h1>Movie Recommendation</h1>
-    
+    <h1>Movie Information</h1>
+
     <form method="POST">
         <label for="movie_name">Enter a Movie Name:</label>
         <input type="text" name="movie_name" required>
         <button type="submit">Search</button>
     </form>
+
+    <div class="movie-container">
+        {% if movie_info %}
+            {% for movie in movie_info %}
+                <div class="movie-item">
+                    {% if movie.poster_path %}
+                        <img src="{{ movie.poster_path }}" alt="{{ movie.title }} poster">
+                    {% endif %}
+                    <h3>{{ movie.title }}</h3>
+                    <p><strong>Description:</strong> {{ movie.description }}</p>
+                    <p><strong>Release Year:</strong> {{ movie.release_year }}</p>
+                    <p><strong>Runtime:</strong> {{ movie.runtime }} minutes</p>
+                    <p><strong>Genres:</strong> {{ movie.genres | join(', ') }}</p>
+                    <p><strong>Production Countries:</strong> {{ movie.production_countries | join(', ') }}</p>
+                    <p><strong>Seasons:</strong> {{ movie.seasons }}</p>
+                    <p><strong>TMDB Popularity:</strong> {{ movie.tmdb_popularity }}</p>
+                    <p><strong>TMDB Score:</strong> {{ movie.tmdb_score }} / 10</p>
+                    <p><strong>Platform:</strong> {{ movie.platform }}</p>
+                </div>
+            {% endfor %}
+        {% elif movie_name %}
+            <p>No results found for "{{ movie_name }}".</p>
+        {% endif %}
+    </div>
 
 </body>
 </html>
